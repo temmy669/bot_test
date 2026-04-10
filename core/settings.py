@@ -25,15 +25,8 @@ SECRET_KEY = 'django-insecure-*kfryr2elg%@dhbaufwfqcw&go*t7j*dt(4ezdxmbke=yw!=1!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Vercel injects VERCEL_URL automatically; fall back to * for local dev
-VERCEL_URL = os.environ.get("VERCEL_URL", "")
-ALLOWED_HOSTS_ENV = os.environ.get("ALLOWED_HOSTS", "")
- 
-ALLOWED_HOSTS = (
-    ALLOWED_HOSTS_ENV.split(",")
-    if ALLOWED_HOSTS_ENV
-    else ([VERCEL_URL] if VERCEL_URL else ["*"])
-)
+#Allow all hosts
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
